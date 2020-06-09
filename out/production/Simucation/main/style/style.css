@@ -1,0 +1,12 @@
+.label{
+    -fx-font-family: "Times New Roman";
+}
+
+.button{
+    -fx-font-family: "Times New Roman";
+    -fx-font-size: 20pt;
+}
+
+#mainscreen{
+    -fx-background-image: url('../resources/bg.jpg') !important;
+}

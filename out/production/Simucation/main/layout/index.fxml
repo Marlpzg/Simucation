@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="mainscreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.IndexController">
+   <top>
+      <StackPane BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" />
+         </children>
+      </StackPane>
+   </top>
+   <center>
+      <StackPane BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="10.0" text="SimuCation" textAlignment="CENTER">
+                     <font>
+                        <Font name="TI-Nspire Bold" size="50.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Label>
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label style="-fx-max-width: 400pt;" text="Bienvenido a SimuCation, el software donde aprenderás de manera interactiva la implementación del Método de los Elementos Finitos en 3D. Para iniciar presiona el botón &quot;Comenzar&quot;." textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font name="TI-Nspire Regular" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnStart" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nextScene" text="Comenzar" textAlignment="CENTER">
+                     <font>
+                        <Font name="TI-Nspire Regular" size="23.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>

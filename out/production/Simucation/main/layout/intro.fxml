@@ -1,13 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.IntroController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.IntroController">
    <children>
-      <Button mnemonicParsing="false" text="Button" />
+      <HBox>
+         <children>
+            <Button fx:id="btnReturn" mnemonicParsing="false" onAction="#prevScene" text="Regresar" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="800.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER" minWidth="-Infinity" prefHeight="200.0" prefWidth="350.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="10.0" text="Para comenzar" textAlignment="CENTER">
+                     <font>
+                        <Font name="TI-Nspire Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label maxWidth="353.0" prefHeight="248.0" prefWidth="353.0" style="-fx-max-width: 250pt;" text="Primero debes familiarizarte con el dominio sobre el cual si aplicará la simulación. Para esta simulación haremos uso de un hexaedro sólido. Utiliza los controles para rotar la imagen." textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font name="TI-Nspire Regular" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="510.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <StackPane fx:id="visor" maxWidth="400.0" minWidth="400.0" prefHeight="150.0" prefWidth="200.0" />
+                  <BorderPane maxWidth="300.0" minWidth="300.0" prefHeight="75.0" prefWidth="322.0">
+                     <top>
+                        <Button fx:id="btnUp" alignment="CENTER" contentDisplay="CENTER" minWidth="100.0" mnemonicParsing="false" onAction="#rotateUp" text="Arriba" BorderPane.alignment="CENTER" />
+                     </top>
+                     <bottom>
+                        <Button fx:id="btnDown" minWidth="100.0" mnemonicParsing="false" onAction="#rotateDown" text="Abajo" BorderPane.alignment="CENTER" />
+                     </bottom>
+                     <left>
+                        <Button fx:id="btnLeft" minWidth="100.0" mnemonicParsing="false" onAction="#rotateLeft" text="Izquierda" BorderPane.alignment="CENTER" />
+                     </left>
+                     <center>
+                        <Button fx:id="btnCenter" minWidth="100.0" mnemonicParsing="false" onAction="#resetImage" text="Reiniciar" BorderPane.alignment="CENTER" />
+                     </center>
+                     <right>
+                        <Button fx:id="btnRight" minWidth="100.0" mnemonicParsing="false" onAction="#rotateRight" text="Derecha" BorderPane.alignment="CENTER" />
+                     </right>
+                  </BorderPane>
+               </children>
+               <padding>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </padding></VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="btnPageTwo" mnemonicParsing="false" onAction="#nextScene" text="Siguiente" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </HBox>
    </children>
 </VBox>

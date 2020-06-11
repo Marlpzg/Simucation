@@ -4,6 +4,10 @@
 
 .button{
     -fx-font-family: "Times New Roman";
+    -fx-font-size: 12pt;
+}
+
+#btnStart{
     -fx-font-size: 20pt;
 }
 

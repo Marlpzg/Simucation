@@ -19,6 +19,7 @@ public class IndexController {
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("../layout/intro.fxml"));
         Scene scene = new Scene(root, screenSize.getWidth()/1.8, screenSize.getHeight()/1.7);
+        scene.getStylesheets().add("./main/style/style.css");
 
         stage.setScene(scene);
     }

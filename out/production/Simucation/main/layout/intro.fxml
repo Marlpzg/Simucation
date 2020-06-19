@@ -28,12 +28,12 @@
                         <Font name="TI-Nspire Bold" size="36.0" />
                      </font>
                   </Label>
-                  <Label>
+                  <Label maxWidth="353.0" prefHeight="248.0" prefWidth="353.0" style="-fx-max-width: 250pt;" text="Primero debes familiarizarte con el dominio sobre el cual se aplicará la simulación. Para esta simulación haremos uso de un hexaedro sólido. Utiliza los controles para rotar la imagen, y para alternar entre el dominio y el mallado." textAlignment="JUSTIFY" wrapText="true">
                      <font>
-                        <Font size="18.0" />
+                        <Font name="TI-Nspire Regular" size="20.0" />
                      </font>
                   </Label>
-                  <Label maxWidth="353.0" prefHeight="248.0" prefWidth="353.0" style="-fx-max-width: 250pt;" text="Primero debes familiarizarte con el dominio sobre el cual si aplicará la simulación. Para esta simulación haremos uso de un hexaedro sólido. Utiliza los controles para rotar la imagen." textAlignment="JUSTIFY" wrapText="true">
+                  <Label maxWidth="353.0" prefHeight="248.0" prefWidth="353.0" style="-fx-max-width: 250pt;" text="Al visualizar el mallado podrás darte cuenta que se indican los nodos y se les asigna un número para identificarlos, haciendo uso de esos nodos se generan tetraedros que serán nuestros elementos para esta simulación. El elemento central tiene aristas anaranjadas para poderlo distinguir, para ver todos los elementos da click en 'Ver tabla de conectividades'." textAlignment="JUSTIFY" wrapText="true">
                      <font>
                         <Font name="TI-Nspire Regular" size="20.0" />
                      </font>
@@ -45,6 +45,15 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="510.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
                <children>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Button fx:id="btnDomain" disable="true" mnemonicParsing="false" onAction="#showDomain" text="Dominio" />
+                        <Button fx:id="btnMesh" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showMesh" text="Mallado" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </HBox>
                   <StackPane fx:id="visor" maxWidth="400.0" minWidth="400.0" prefHeight="150.0" prefWidth="200.0" />
                   <BorderPane maxWidth="300.0" minWidth="300.0" prefHeight="75.0" prefWidth="322.0">
                      <top>
@@ -62,7 +71,18 @@
                      <right>
                         <Button fx:id="btnRight" minWidth="100.0" mnemonicParsing="false" onAction="#rotateRight" text="Derecha" BorderPane.alignment="CENTER" />
                      </right>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
                   </BorderPane>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Button fx:id="btnTable" disable="true" mnemonicParsing="false" onAction="#showTable" text="Ver Tabla de conectividades" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </HBox>
                </children>
                <padding>
                   <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />

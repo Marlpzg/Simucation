@@ -16,10 +16,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         Parent root = FXMLLoader.load(getClass().getResource("./layout/index.fxml"));
-        primaryStage.setTitle("Simucation");
-        Scene scene = new Scene(root, screenSize.getWidth()/1.8, screenSize.getHeight()/1.7);
+        primaryStage.setTitle("SimuCation");
+        Scene scene = new Scene(root, Values.WIDTH, Values.HEIGHT);
         primaryStage.getIcons().add(new Image("./main/resources/circuit.png"));
         scene.getStylesheets().add("./main/style/style.css");
         primaryStage.setScene(scene);

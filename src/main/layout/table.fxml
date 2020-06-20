@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.TableController">
+   <children>
+      <Label maxWidth="300.0" text="Esta es la tabla de conectividades del mallado, ten en cuenta que esta ventana se cerrará al dar clic fuera de ella." textAlignment="JUSTIFY" wrapText="true">
+         <VBox.margin>
+            <Insets bottom="50.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <TableView fx:id="tbTabla" maxHeight="160.0" maxWidth="352.0" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="colElement" editable="false" prefWidth="150.0" resizable="false">
+               <graphic>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <HBox alignment="TOP_RIGHT">
+                           <children>
+                              <Label text="Nodos Locales" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="BOTTOM_LEFT">
+                           <children>
+                              <Label text="Elementos" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </graphic></TableColumn>
+          <TableColumn fx:id="colNode1" editable="false" prefWidth="50.0" resizable="false" sortable="false" text="1" />
+          <TableColumn fx:id="colNode2" editable="false" prefWidth="50.0" resizable="false" sortable="false" text="2" />
+          <TableColumn fx:id="colNode3" editable="false" prefWidth="50.0" resizable="false" sortable="false" text="3" />
+          <TableColumn fx:id="colNode4" editable="false" prefWidth="50.0" resizable="false" sortable="false" text="4" />
+        </columns>
+      </TableView>
+   </children>
+</VBox>

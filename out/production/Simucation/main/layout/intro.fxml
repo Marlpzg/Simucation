@@ -30,12 +30,12 @@
                   </Label>
                   <Label maxWidth="353.0" prefHeight="248.0" prefWidth="353.0" style="-fx-max-width: 250pt;" text="Primero debes familiarizarte con el dominio sobre el cual se aplicará la simulación. Para esta simulación haremos uso de un hexaedro sólido. Utiliza los controles para rotar la imagen, y para alternar entre el dominio y el mallado." textAlignment="JUSTIFY" wrapText="true">
                      <font>
-                        <Font name="TI-Nspire Regular" size="20.0" />
+                        <Font name="TI-Nspire Regular" size="18.0" />
                      </font>
                   </Label>
-                  <Label maxWidth="353.0" prefHeight="248.0" prefWidth="353.0" style="-fx-max-width: 250pt;" text="Al visualizar el mallado podrás darte cuenta que se indican los nodos y se les asigna un número para identificarlos, haciendo uso de esos nodos se generan tetraedros que serán nuestros elementos para esta simulación. El elemento central tiene aristas anaranjadas para poderlo distinguir, para ver todos los elementos da click en 'Ver tabla de conectividades'." textAlignment="JUSTIFY" wrapText="true">
+                  <Label maxWidth="353.0" prefHeight="248.0" prefWidth="353.0" style="-fx-max-width: 250pt;" text="Al visualizar el mallado podrás darte cuenta que se indica la ubicación de los nodos y se les asigna un número para identificarlos, haciendo uso de esos nodos se generan tetraedros que serán nuestros elementos para esta simulación. El elemento central tiene aristas anaranjadas para poderlo distinguir, para ver por qué nodos están conformados todos los elementos da click en el botón &quot;Ver tabla de conectividades&quot; mientras esté seleccionado la vista de mallado." textAlignment="JUSTIFY" wrapText="true">
                      <font>
-                        <Font name="TI-Nspire Regular" size="20.0" />
+                        <Font name="TI-Nspire Regular" size="18.0" />
                      </font>
                   </Label>
                </children>

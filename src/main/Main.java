@@ -22,6 +22,7 @@ public class Main extends Application {
         primaryStage.getIcons().add(new Image("./main/resources/circuit.png"));
         scene.getStylesheets().add("./main/style/style.css");
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 

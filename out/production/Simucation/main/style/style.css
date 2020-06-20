@@ -14,3 +14,7 @@
 #mainscreen{
     -fx-background-image: url('../resources/bg.jpg') !important;
 }
+
+.table-view{
+    -fx-font-family: "Times New Roman";
+}

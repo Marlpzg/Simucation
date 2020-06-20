@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import main.Values;
 
@@ -60,6 +61,7 @@ public class IntroController implements Initializable {
         btnMesh.setDisable(true);
         btnDomain.setDisable(false);
         btnTable.setDisable(false);
+        btnTable.requestFocus();
         renderModel();
 
     }
@@ -78,7 +80,23 @@ public class IntroController implements Initializable {
     @FXML
     private void showTable(ActionEvent event) throws Exception{
 
+        Stage window = new Stage();
 
+        //window.initModality(Modality.APPLICATION_MODAL);
+        window.setTitle("Tabla de conectividades");
+        window.setResizable(false);
+        window.getIcons().add(new Image("./main/resources/circuit.png"));
+        window.focusedProperty().addListener((obs, wasFocused, isNowFocused) -> {
+            if (! isNowFocused) {
+                window.close();
+            }
+        });
+        Parent root = FXMLLoader.load(getClass().getResource("../layout/table.fxml"));
+
+        Scene scene = new Scene(root, 400, 350);
+        scene.getStylesheets().add("./main/style/style.css");
+        window.setScene(scene);
+        window.showAndWait();
 
     }
 

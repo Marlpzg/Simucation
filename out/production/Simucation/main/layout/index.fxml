@@ -35,7 +35,7 @@
                         <Font size="21.0" />
                      </font>
                   </Label>
-                  <Label style="-fx-max-width: 400pt;" text="Bienvenido a SimuCation, el software donde aprenderás de manera interactiva la implementación del Método de los Elementos Finitos en 3D. Para iniciar presiona el botón &quot;Comenzar&quot;." textAlignment="JUSTIFY" wrapText="true">
+                  <Label style="-fx-max-width: 400pt;" text="¡Te damos la bienvenida a SimuCation! Aquí aprenderás de manera interactiva y efectiva la implementación del Método de los Elementos Finitos en 3D. Para iniciar con esta gran aventura presiona el botón &quot;Comenzar&quot;." textAlignment="JUSTIFY" wrapText="true">
                      <font>
                         <Font name="TI-Nspire Regular" size="20.0" />
                      </font>

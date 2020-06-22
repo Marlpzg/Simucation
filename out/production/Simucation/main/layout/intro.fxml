@@ -9,17 +9,22 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.IntroController">
-   <children>
-      <HBox>
+<BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.IntroController">
+   <bottom>
+      <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnReturn" mnemonicParsing="false" onAction="#prevScene" text="Regresar" />
+            <Button fx:id="btnPageTwo" mnemonicParsing="false" onAction="#nextScene" text="Siguiente" />
          </children>
-         <VBox.margin>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <BorderPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </VBox.margin>
+         </BorderPane.margin>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="800.0" prefWidth="600.0">
+   </bottom>
+   <center>
+      <HBox alignment="CENTER" prefHeight="800.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
             <VBox alignment="CENTER" minWidth="-Infinity" prefHeight="200.0" prefWidth="350.0" HBox.hgrow="ALWAYS">
                <children>
@@ -33,7 +38,7 @@
                         <Font name="TI-Nspire Regular" size="18.0" />
                      </font>
                   </Label>
-                  <Label maxWidth="353.0" prefHeight="248.0" prefWidth="353.0" style="-fx-max-width: 250pt;" text="Al visualizar el mallado podrás darte cuenta que se indica la ubicación de los nodos y se les asigna un número para identificarlos, haciendo uso de esos nodos se generan tetraedros que serán nuestros elementos para esta simulación. El elemento central tiene aristas anaranjadas para poderlo distinguir, para ver por qué nodos están conformados todos los elementos da click en el botón &quot;Ver tabla de conectividades&quot; mientras esté seleccionado la vista de mallado." textAlignment="JUSTIFY" wrapText="true">
+                  <Label maxWidth="353.0" prefHeight="248.0" prefWidth="353.0" style="-fx-max-width: 250pt;" text="Al visualizar el mallado podrás darte cuenta que se indica la ubicación de los nodos y se les asigna un número para identificarlos, haciendo uso de esos nodos se generan tetraedros que serán nuestros elementos para esta simulación. El elemento central tiene aristas anaranjadas para poderlo distinguir, para ver por qué nodos están conformados todos los elementos da click en el botón &quot;Ver tabla de conectividades&quot; mientras esté seleccionada la vista de mallado." textAlignment="JUSTIFY" wrapText="true">
                      <font>
                         <Font name="TI-Nspire Regular" size="18.0" />
                      </font>
@@ -56,21 +61,21 @@
                   </HBox>
                   <StackPane fx:id="visor" maxWidth="400.0" minWidth="400.0" prefHeight="150.0" prefWidth="200.0" />
                   <BorderPane maxWidth="300.0" minWidth="300.0" prefHeight="75.0" prefWidth="322.0">
-                     <top>
-                        <Button fx:id="btnUp" alignment="CENTER" contentDisplay="CENTER" minWidth="100.0" mnemonicParsing="false" onAction="#rotateUp" text="Arriba" BorderPane.alignment="CENTER" />
-                     </top>
                      <bottom>
                         <Button fx:id="btnDown" minWidth="100.0" mnemonicParsing="false" onAction="#rotateDown" text="Abajo" BorderPane.alignment="CENTER" />
                      </bottom>
-                     <left>
-                        <Button fx:id="btnLeft" minWidth="100.0" mnemonicParsing="false" onAction="#rotateLeft" text="Izquierda" BorderPane.alignment="CENTER" />
-                     </left>
                      <center>
                         <Button fx:id="btnCenter" minWidth="100.0" mnemonicParsing="false" onAction="#resetImage" text="Reiniciar" BorderPane.alignment="CENTER" />
                      </center>
+                     <left>
+                        <Button fx:id="btnLeft" minWidth="100.0" mnemonicParsing="false" onAction="#rotateLeft" text="Izquierda" BorderPane.alignment="CENTER" />
+                     </left>
                      <right>
                         <Button fx:id="btnRight" minWidth="100.0" mnemonicParsing="false" onAction="#rotateRight" text="Derecha" BorderPane.alignment="CENTER" />
                      </right>
+                     <top>
+                        <Button fx:id="btnUp" alignment="CENTER" contentDisplay="CENTER" minWidth="100.0" mnemonicParsing="false" onAction="#rotateUp" text="Arriba" BorderPane.alignment="CENTER" />
+                     </top>
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
@@ -86,19 +91,19 @@
                </children>
                <padding>
                   <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
-               </padding></VBox>
+               </padding>
+            </VBox>
          </children>
       </HBox>
-      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+   </center>
+   <top>
+      <HBox BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnPageTwo" mnemonicParsing="false" onAction="#nextScene" text="Siguiente" />
+            <Button fx:id="btnReturn" mnemonicParsing="false" onAction="#prevScene" text="Regresar" />
          </children>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <VBox.margin>
+         <BorderPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </VBox.margin>
+         </BorderPane.margin>
       </HBox>
-   </children>
-</VBox>
+   </top>
+</BorderPane>

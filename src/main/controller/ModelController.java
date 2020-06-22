@@ -9,15 +9,26 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.Values;
 
-import java.awt.*;
 
-public class IndexController {
+public class ModelController{
+
+
+    @FXML
+    private void prevScene(ActionEvent event) throws Exception{
+
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("../layout/intro.fxml"));
+        Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
+        scene.getStylesheets().add("./main/style/style.css");
+
+        stage.setScene(scene);
+    }
 
     @FXML
     private void nextScene(ActionEvent event) throws Exception{
 
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../layout/intro.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../layout/condIntro.fxml"));
         Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
         scene.getStylesheets().add("./main/style/style.css");
 

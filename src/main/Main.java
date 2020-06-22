@@ -1,6 +1,5 @@
 package main;
 
-import com.proudapes.jlatexmathfx.Control.LateXMathControl;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,7 +17,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("./layout/index.fxml"));
         primaryStage.setTitle("SimuCation");
-        Scene scene = new Scene(root, Values.WIDTH, Values.HEIGHT);
+        Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
+
+
         primaryStage.getIcons().add(new Image("./main/resources/circuit.png"));
         scene.getStylesheets().add("./main/style/style.css");
         primaryStage.setScene(scene);

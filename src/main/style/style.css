@@ -7,6 +7,11 @@
     -fx-font-size: 12pt;
 }
 
+.text-field{
+    -fx-font-family: "Times New Roman";
+    -fx-font-size: 14pt;
+}
+
 #btnStart{
     -fx-font-size: 20pt;
 }

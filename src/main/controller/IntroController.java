@@ -13,6 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import main.Values;
 
 
@@ -22,6 +23,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class IntroController implements Initializable {
+
+    private Stage window;
 
     @FXML
     private StackPane visor;
@@ -41,8 +44,9 @@ public class IntroController implements Initializable {
 
     public void renderModel(){
         ImageView img = new ImageView(new Image("/main/resources/"+route+"/x"+xVal+"y"+yVal+".png"));
-        img.setFitWidth(Values.WIDTH/2.1);
-        img.setFitHeight(Values.HEIGHT/2.35);
+        img.setFitWidth(Values.getWidth()/2.1);
+        img.setFitHeight(Values.getHeight()/2.35);
+        visor.getChildren().clear();
         visor.getChildren().add(img);
     }
 
@@ -80,20 +84,17 @@ public class IntroController implements Initializable {
     @FXML
     private void showTable(ActionEvent event) throws Exception{
 
-        Stage window = new Stage();
+        window = new Stage(StageStyle.UTILITY);
 
         //window.initModality(Modality.APPLICATION_MODAL);
+        window.setAlwaysOnTop(true);
         window.setTitle("Tabla de conectividades");
         window.setResizable(false);
         window.getIcons().add(new Image("./main/resources/circuit.png"));
-        window.focusedProperty().addListener((obs, wasFocused, isNowFocused) -> {
-            if (! isNowFocused) {
-                window.close();
-            }
-        });
         Parent root = FXMLLoader.load(getClass().getResource("../layout/table.fxml"));
 
         Scene scene = new Scene(root, 400, 350);
+
         scene.getStylesheets().add("./main/style/style.css");
         window.setScene(scene);
         window.showAndWait();
@@ -103,10 +104,12 @@ public class IntroController implements Initializable {
     @FXML
     private void prevScene(ActionEvent event) throws Exception{
 
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        if (window != null)
+            window.close();
+
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("../layout/index.fxml"));
-        Scene scene = new Scene(root, screenSize.getWidth()/1.8, screenSize.getHeight()/1.7);
+        Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
         scene.getStylesheets().add("./main/style/style.css");
 
         stage.setScene(scene);
@@ -115,13 +118,16 @@ public class IntroController implements Initializable {
     @FXML
     private void nextScene(ActionEvent event) throws Exception{
 
-        //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        //Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        //Parent root = FXMLLoader.load(getClass().getResource("../layout/intro.fxml"));
-        //Scene scene = new Scene(root, screenSize.getWidth()/1.8, screenSize.getHeight()/1.7);
-        //scene.getStylesheets().add("./main/style/style.css");
+        if (window != null)
+            window.close();
 
-        //stage.setScene(scene);
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("../layout/model.fxml"));
+        Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
+        scene.getStylesheets().add("./main/style/style.css");
+        stage.setScene(scene);
+
+
     }
 
     @FXML

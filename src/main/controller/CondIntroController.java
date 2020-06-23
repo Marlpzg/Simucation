@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.Values;
 import main.classes.AlertBox;
+import main.classes.Saving;
 
 import java.util.ArrayList;
 
@@ -42,12 +43,14 @@ public class CondIntroController {
     @FXML
     private void nextScene(ActionEvent event) throws Exception{
 
-        //Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        //Parent root = FXMLLoader.load(getClass().getResource("../layout/intro.fxml"));
-        //Scene scene = new Scene(root, Values.WIDTH, Values.HEIGHT);
-        //scene.getStylesheets().add("./main/style/style.css");
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("../layout/mefSteps.fxml"));
+        Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
+        scene.getStylesheets().add("./main/style/style.css");
 
-        //stage.setScene(scene);
+        Saving.save("4");
+
+        stage.setScene(scene);
     }
 
     @FXML

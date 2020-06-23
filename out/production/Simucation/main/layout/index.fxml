@@ -40,6 +40,14 @@
                         <Font name="TI-Nspire Regular" size="20.0" />
                      </font>
                   </Label>
+                  <Label style="-fx-max-width: 400pt;" text="Si ya has avanzado anteriormente puedes dar clic en el botón &quot;Continuar&quot;. No te preocupes, tu progreso se irá guardando automáticamente." textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font name="TI-Nspire Regular" size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
                   <Label>
                      <font>
                         <Font size="20.0" />
@@ -49,6 +57,22 @@
                      <font>
                         <Font name="TI-Nspire Regular" size="23.0" />
                      </font>
+                  </Button>
+                  <Button fx:id="btnCont" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#continueCourse" text="Continuar" textAlignment="CENTER">
+                     <font>
+                        <Font name="TI-Nspire Regular" size="23.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="btnReset" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#resetCourse" text="Reiniciar Progreso" textAlignment="CENTER">
+                     <font>
+                        <Font name="TI-Nspire Regular" size="23.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
                   </Button>
                </children>
             </VBox>

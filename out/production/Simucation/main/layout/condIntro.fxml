@@ -75,7 +75,7 @@
                               <Font name="TI-Nspire Regular" size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtNeu" centerShape="false" prefWidth="100.0" promptText="1,2,3,4">
+                        <TextField fx:id="txtNeu" centerShape="false" focusTraversable="false" prefWidth="100.0" promptText="1,2,3,4">
                            <font>
                               <Font name="TI-Nspire Regular" size="18.0" />
                            </font>
@@ -88,7 +88,7 @@
                               <Font name="TI-Nspire Regular" size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtDir" centerShape="false" prefWidth="100.0" promptText="1,2,3,4">
+                        <TextField fx:id="txtDir" centerShape="false" focusTraversable="false" prefWidth="100.0" promptText="1,2,3,4">
                            <font>
                               <Font name="TI-Nspire Regular" size="18.0" />
                            </font>

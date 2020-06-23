@@ -8,17 +8,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.Values;
-import main.classes.Saving;
 
-
-public class ModelController{
-
+public class MefStepsController {
 
     @FXML
     private void prevScene(ActionEvent event) throws Exception{
 
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../layout/intro.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../layout/condIntro.fxml"));
         Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
         scene.getStylesheets().add("./main/style/style.css");
 
@@ -28,14 +25,12 @@ public class ModelController{
     @FXML
     private void nextScene(ActionEvent event) throws Exception{
 
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../layout/condIntro.fxml"));
-        Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
-        scene.getStylesheets().add("./main/style/style.css");
+        //Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        //Parent root = FXMLLoader.load(getClass().getResource("../layout/intro.fxml"));
+        //Scene scene = new Scene(root, Values.WIDTH, Values.HEIGHT);
+        //scene.getStylesheets().add("./main/style/style.css");
 
-        Saving.save("3");
-
-        stage.setScene(scene);
+        //stage.setScene(scene);
     }
 
 }

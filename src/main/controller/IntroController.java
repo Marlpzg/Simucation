@@ -15,6 +15,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import main.Values;
+import main.classes.Saving;
 
 
 import java.awt.Dimension;
@@ -125,6 +126,9 @@ public class IntroController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("../layout/model.fxml"));
         Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
         scene.getStylesheets().add("./main/style/style.css");
+
+        Saving.save("2");
+
         stage.setScene(scene);
 
 

@@ -5,6 +5,7 @@
 .button{
     -fx-font-family: "Times New Roman";
     -fx-font-size: 12pt;
+    -fx-cursor: hand;
 }
 
 .text-field{
@@ -12,7 +13,7 @@
     -fx-font-size: 14pt;
 }
 
-#btnStart{
+#btnStart, #btnCont, #btnReset{
     -fx-font-size: 20pt;
 }
 

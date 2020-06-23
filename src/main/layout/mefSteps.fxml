@@ -49,14 +49,14 @@
                <left>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button fx:id="btnPrevStep" mnemonicParsing="false" text="Paso Anterior" />
+                        <Button fx:id="btnPrevStep" mnemonicParsing="false" onAction="#prevStep" text="Paso Anterior" />
                      </children>
                   </HBox>
                </left>
                <right>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button fx:id="btnNextStep" mnemonicParsing="false" text="Siguiente Paso" />
+                        <Button fx:id="btnNextStep" mnemonicParsing="false" onAction="#nextStep" text="Siguiente Paso" />
                      </children>
                   </HBox>
                </right>
@@ -67,14 +67,14 @@
                <left>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button fx:id="btnPrevPart" mnemonicParsing="false" text="Anterior" />
+                        <Button fx:id="btnPrevPart" mnemonicParsing="false" onAction="#prevPart" text="Anterior" />
                      </children>
                   </HBox>
                </left>
                <right>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button fx:id="btnNextPart" mnemonicParsing="false" text="Siguiente" />
+                        <Button fx:id="btnNextPart" mnemonicParsing="false" onAction="#nextPart" text="Siguiente" />
                      </children>
                   </HBox>
                </right>

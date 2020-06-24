@@ -67,6 +67,16 @@ public class Saving {
             case "4":
                 return "mefSteps";
             case "5":
+                return "mefSteps";
+            case "6":
+                return "mefSteps";
+            case "7":
+                return "mefSteps";
+            case "8":
+                return "mefSteps";
+            case "9":
+                return "mefSteps";
+            case "10":
                 return "";
             default:
                 return null;

@@ -40,7 +40,7 @@
                         <Font name="TI-Nspire Regular" size="20.0" />
                      </font>
                   </Label>
-                  <Label style="-fx-max-width: 400pt;" text="Si ya has avanzado anteriormente puedes dar clic en el botón &quot;Continuar&quot;. No te preocupes, tu progreso se irá guardando automáticamente." textAlignment="JUSTIFY" wrapText="true">
+                  <Label style="-fx-max-width: 400pt;" text="Si ya has avanzado anteriormente puedes dar clic en el botón &quot;Continuar&quot;. No te preocupes, tu progreso se irá guardando automáticamente cuando pases de sección." textAlignment="JUSTIFY" wrapText="true">
                      <font>
                         <Font name="TI-Nspire Regular" size="20.0" />
                      </font>

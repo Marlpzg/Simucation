@@ -3,6 +3,7 @@ package main.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,9 +14,11 @@ import main.Values;
 import main.classes.AlertBox;
 import main.classes.Saving;
 
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class CondIntroController {
+public class CondIntroController implements Initializable {
 
     @FXML
     private TextField txtDir;
@@ -28,6 +31,16 @@ public class CondIntroController {
 
     @FXML
     private Button btnVerif;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        String checkpoint = Saving.load();
+        if (checkpoint != null){
+            if(Integer.parseInt(checkpoint) > 3) {
+                btnNext.setDisable(false);
+            }
+        }
+    }
 
     @FXML
     private void prevScene(ActionEvent event) throws Exception{
@@ -44,12 +57,10 @@ public class CondIntroController {
     private void nextScene(ActionEvent event) throws Exception{
 
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Saving.save("4");
         Parent root = FXMLLoader.load(getClass().getResource("../layout/mefSteps.fxml"));
         Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
         scene.getStylesheets().add("./main/style/style.css");
-
-        Saving.save("4");
-
         stage.setScene(scene);
     }
 

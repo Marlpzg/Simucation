@@ -6,9 +6,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 public class Saving {
+
+    private static final String fileName = "simuData.txt";
 
     public static void save(String val){
         Path currentRelativePath = Paths.get("");
@@ -28,6 +32,7 @@ public class Saving {
         try {
             if(Integer.parseInt(content) > current) {
                 new PrintWriter(path.toString());
+                content = encrypt(content);
                 Files.write(path, content.getBytes(), StandardOpenOption.CREATE);
             }
         } catch (IOException e) {
@@ -38,14 +43,17 @@ public class Saving {
     public static String load(){
         Path currentRelativePath = Paths.get("");
         String directory = currentRelativePath.toAbsolutePath().toString();
-        String fileName = "simuData.txt";
 
         Path path = Paths.get(directory, fileName);
 
         try {
             List<String> list = Files.readAllLines(path);
             if (list.size()>0)
-                return list.get(0);
+                try {
+                    return decrypt(list.get(0));
+                }catch (Exception e){
+                    return null;
+                }
             return "";
         } catch (IOException e) {
             return null;
@@ -77,7 +85,21 @@ public class Saving {
             case "9":
                 return "mefSteps";
             case "10":
-                return "";
+                return "defSteps";
+            case "11":
+                return "defSteps";
+            case "12":
+                return "defSteps";
+            case "13":
+                return "defSteps";
+            case "14":
+                return "defSteps";
+            case "15":
+                return "defSteps";
+            case "16":
+                return "defSteps";
+            case "17":
+                return "defSteps";
             default:
                 return null;
         }
@@ -86,7 +108,6 @@ public class Saving {
     public static void delete(){
         Path currentRelativePath = Paths.get("");
         String directory = currentRelativePath.toAbsolutePath().toString();
-        String fileName = "simuData.txt";
         Path path = Paths.get(directory, fileName);
 
         try {
@@ -95,6 +116,15 @@ public class Saving {
             System.out.println("Error");
         }
 
+    }
+
+    private static String encrypt(String value){
+        return "167854235982485176"+value+"512354951235412657519";
+    }
+
+    private static String decrypt(String value){
+        String nv = value.substring(18);
+        return nv.substring(0, nv.length() - 21);
     }
 
 }

@@ -63,6 +63,10 @@ public class MefStepsController implements Initializable {
 
         String checkpoint = Saving.load();
         if (checkpoint != null){
+            if(Integer.parseInt(checkpoint) > 9) {
+                checkpoint = "9";
+                btnNext.setDisable(false);
+            }
             maxStep = Integer.parseInt(checkpoint)-4;
             currStep = maxStep;
         }
@@ -235,14 +239,12 @@ public class MefStepsController implements Initializable {
     @FXML
     private void nextScene(ActionEvent event) throws Exception{
 
-        //Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        //Parent root = FXMLLoader.load(getClass().getResource("../layout/intro.fxml"));
-        //Scene scene = new Scene(root, Values.WIDTH, Values.HEIGHT);
-        //scene.getStylesheets().add("./main/style/style.css");
-
-        //Saving.save("5");
-
-        //stage.setScene(scene);
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Saving.save("10");
+        Parent root = FXMLLoader.load(getClass().getResource("../layout/defSteps.fxml"));
+        Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
+        scene.getStylesheets().add("./main/style/style.css");
+        stage.setScene(scene);
     }
 
 }

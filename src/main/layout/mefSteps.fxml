@@ -71,14 +71,14 @@
          <center>
             <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <left>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <HBox alignment="CENTER" maxWidth="100.0" prefHeight="100.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                      <children>
                         <Button fx:id="btnPrevPart" mnemonicParsing="false" onAction="#prevPart" text="Anterior" />
                      </children>
                   </HBox>
                </left>
                <right>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <HBox alignment="CENTER" maxWidth="100.0" prefHeight="100.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                      <children>
                         <Button fx:id="btnNextPart" mnemonicParsing="false" onAction="#nextPart" text="Siguiente" />
                      </children>
@@ -87,7 +87,7 @@
                <center>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                      <children>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="600.0">
                            <children>
                               <Label fx:id="lblDesc" minWidth="650.0" prefWidth="650.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada sollicitudin eros, eu rhoncus nisl faucibus id. Fusce id felis leo. Curabitur cursus lectus lorem, eu accumsan tortor sollicitudin eget. Proin sapien est, scelerisque eget ultricies et, volutpat a nibh. Integer sit amet leo non purus scelerisque ultrices. Etiam nec lacinia ligula. Nullam aliquam fermentum tortor at aliquam. Nam congue mi at enim pulvinar, et pellentesque augue placerat. Sed nec dapibus massa. Pellentesque vitae justo id nulla ullamcorper tincidunt quis non dui. Nullam in ipsum nunc. Nulla eu tellus tincidunt, imperdiet nisl vitae, tincidunt tellus. Nullam eget efficitur mauris. Proin placerat lectus nec lacus interdum accumsan." textAlignment="JUSTIFY" wrapText="true">
                                  <font>

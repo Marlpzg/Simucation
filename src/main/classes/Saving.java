@@ -100,6 +100,8 @@ public class Saving {
                 return "defSteps";
             case "17":
                 return "defSteps";
+            case "18":
+                return "defSteps";
             default:
                 return null;
         }

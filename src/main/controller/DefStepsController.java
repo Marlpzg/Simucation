@@ -157,7 +157,7 @@ public class DefStepsController implements Initializable {
         mH.add(new MefPart("Una vez más se debe usar el concepto de jacobiano, recordar que las integrales tendrán la siguiente forma:","volumeIntegral"));
         mH.add(new MefPart("Resolviendo las integrales tendremos como resultado una matriz muy extensa:","mH3"));
         mH.add(new MefPart("Una vez más le asignaremos un nombre a esta matriz sin considerar la constante de la izquierda. Esta matriz se denominará matriz ω. \nCon esto hemos definido completamente la matriz H:","mH4"));
-        mH.add(new MefPart("¡Increíble! Estamos muy cerca de completar nuestra implementación del MEF en 3D. Este es un muy buen momento para tomarte un descanso luego de dar clic en \"Siguiente\" para que se guarde tu progreso. \nComo sabemos que te has esforzado mucho te tenemos preparada una desmotración para que te relajes:","demo"));
+        mH.add(new MefPart("¡Increíble! Estamos muy cerca de completar nuestra implementación del MEF en 3D. Este es un muy buen momento para tomarte un descanso luego de dar clic en \"Siguiente\" para que se guarde tu progreso. \nComo sabemos que te has esforzado mucho te tenemos preparada una demostración para que te relajes:","demo"));
         steps.add(new MefStep("Componentes de la matriz H", mH));
 
         btnNextStep.setDisable(true);
@@ -292,12 +292,13 @@ public class DefStepsController implements Initializable {
     @FXML
     private void nextScene(ActionEvent event) throws Exception{
 
-        //Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        //Saving.save("10");
-        //Parent root = FXMLLoader.load(getClass().getResource("../layout/intro.fxml"));
-        //Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
-        //scene.getStylesheets().add("./main/style/style.css");
-        //stage.setScene(scene);
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Saving.save("19");
+        Parent root = FXMLLoader.load(getClass().getResource("../layout/assembly.fxml"));
+        Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
+        scene.getStylesheets().add("./main/style/style.css");
+        stage.setScene(scene);
+
     }
 
 }

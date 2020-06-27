@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="596.0" prefWidth="920.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.AssemblyController">
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #002e66;" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="btnNext" disable="true" mnemonicParsing="false" onAction="#nextScene" text="Siguiente" />
+            </children>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+        </HBox>
+    </bottom>
+    <top>
+        <HBox style="-fx-background-color: #002e66;" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="btnReturn" mnemonicParsing="false" onAction="#prevScene" text="Regresar" />
+            </children>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+        </HBox>
+    </top>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <BorderPane style="-fx-background-color: #00a390;" BorderPane.alignment="CENTER">
+               <center>
+                   <Label fx:id="lblStepName" alignment="CENTER" contentDisplay="CENTER" lineSpacing="10.0" text="Titulo" textAlignment="CENTER" textFill="WHITE">
+                       <font>
+                           <Font name="TI-Nspire Bold" size="36.0" />
+                       </font>
+                   </Label>
+               </center>
+               <left>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="btnPrevStep" mnemonicParsing="false" onAction="#prevStep" text="Paso Anterior" />
+                     </children>
+                  </HBox>
+               </left>
+               <right>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="btnNextStep" mnemonicParsing="false" onAction="#nextStep" text="Siguiente Paso" />
+                     </children>
+                  </HBox>
+               </right>
+            </BorderPane>
+         </top>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <left>
+                  <HBox alignment="CENTER" maxWidth="100.0" prefHeight="100.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="btnPrevPart" mnemonicParsing="false" onAction="#prevPart" text="Anterior" />
+                     </children>
+                  </HBox>
+               </left>
+               <right>
+                  <HBox alignment="CENTER" maxWidth="100.0" prefHeight="100.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="btnNextPart" mnemonicParsing="false" onAction="#nextPart" text="Siguiente" />
+                     </children>
+                  </HBox>
+               </right>
+               <center>
+                  <VBox fx:id="vbBody" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="600.0">
+                           <children>
+                              <Label fx:id="lblDesc" minWidth="650.0" prefWidth="650.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada sollicitudin eros, eu rhoncus nisl faucibus id. Fusce id felis leo. Curabitur cursus lectus lorem, eu accumsan tortor sollicitudin eget. Proin sapien est, scelerisque eget ultricies et, volutpat a nibh. Integer sit amet leo non purus scelerisque ultrices. Etiam nec lacinia ligula. Nullam aliquam fermentum tortor at aliquam. Nam congue mi at enim pulvinar, et pellentesque augue placerat. Sed nec dapibus massa. Pellentesque vitae justo id nulla ullamcorper tincidunt quis non dui. Nullam in ipsum nunc. Nulla eu tellus tincidunt, imperdiet nisl vitae, tincidunt tellus. Nullam eget efficitur mauris. Proin placerat lectus nec lacus interdum accumsan." textAlignment="JUSTIFY" wrapText="true">
+                                 <font>
+                                    <Font name="TI-Nspire Regular" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <StackPane fx:id="spImgCont" prefHeight="150.0" prefWidth="200.0">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin></StackPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </center>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </center>
+</BorderPane>

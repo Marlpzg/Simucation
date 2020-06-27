@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Saving {
@@ -102,6 +103,14 @@ public class Saving {
                 return "defSteps";
             case "18":
                 return "defSteps";
+            case "19":
+                return "assembly";
+            case "20":
+                return "assembly";
+            case "21":
+                return "assembly";
+            case "22":
+                return "assembly";
             default:
                 return null;
         }

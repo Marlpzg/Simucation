@@ -46,9 +46,9 @@ public class CondIntroController implements Initializable {
     private void prevScene(ActionEvent event) throws Exception{
 
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../layout/model.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/main/layout/model.fxml"));
         Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
-        scene.getStylesheets().add("./main/style/style.css");
+        scene.getStylesheets().add("/main/style/style.css");
 
         stage.setScene(scene);
     }
@@ -58,9 +58,9 @@ public class CondIntroController implements Initializable {
 
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Saving.save("4");
-        Parent root = FXMLLoader.load(getClass().getResource("../layout/mefSteps.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/main/layout/mefSteps.fxml"));
         Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
-        scene.getStylesheets().add("./main/style/style.css");
+        scene.getStylesheets().add("/main/style/style.css");
         stage.setScene(scene);
     }
 

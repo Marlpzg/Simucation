@@ -87,16 +87,15 @@ public class IntroController implements Initializable {
 
         window = new Stage(StageStyle.UTILITY);
 
-        //window.initModality(Modality.APPLICATION_MODAL);
         window.setAlwaysOnTop(true);
         window.setTitle("Tabla de conectividades");
         window.setResizable(false);
-        window.getIcons().add(new Image("./main/resources/circuit.png"));
-        Parent root = FXMLLoader.load(getClass().getResource("../layout/table.fxml"));
+        window.getIcons().add(new Image("/main/resources/circuit.png"));
+        Parent root = FXMLLoader.load(getClass().getResource("/main/layout/table.fxml"));
 
         Scene scene = new Scene(root, 400, 350);
 
-        scene.getStylesheets().add("./main/style/style.css");
+        scene.getStylesheets().add("/main/style/style.css");
         window.setScene(scene);
         window.showAndWait();
 
@@ -109,9 +108,9 @@ public class IntroController implements Initializable {
             window.close();
 
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../layout/index.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/main/layout/index.fxml"));
         Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
-        scene.getStylesheets().add("./main/style/style.css");
+        scene.getStylesheets().add("/main/style/style.css");
 
         stage.setScene(scene);
     }
@@ -123,9 +122,9 @@ public class IntroController implements Initializable {
             window.close();
 
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../layout/model.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/main/layout/model.fxml"));
         Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
-        scene.getStylesheets().add("./main/style/style.css");
+        scene.getStylesheets().add("/main/style/style.css");
 
         Saving.save("2");
 

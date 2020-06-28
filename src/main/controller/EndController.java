@@ -23,9 +23,9 @@ public class EndController{
 
         Saving.delete();
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../layout/index.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/main/layout/index.fxml"));
         Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
-        scene.getStylesheets().add("./main/style/style.css");
+        scene.getStylesheets().add("/main/style/style.css");
 
         stage.setScene(scene);
     }

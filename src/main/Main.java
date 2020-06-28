@@ -15,13 +15,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("./layout/index.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/main/layout/index.fxml"));
         primaryStage.setTitle("SimuCation");
         Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
 
 
-        primaryStage.getIcons().add(new Image("./main/resources/circuit.png"));
-        scene.getStylesheets().add("./main/style/style.css");
+        primaryStage.getIcons().add(new Image("/main/resources/circuit.png"));
+        scene.getStylesheets().add("/main/style/style.css");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();

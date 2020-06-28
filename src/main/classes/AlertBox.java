@@ -17,7 +17,7 @@ public class AlertBox {
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle(title);
         window.setMinWidth(250);
-        window.getIcons().add(new Image("./main/resources/circuit.png"));
+        window.getIcons().add(new Image("/main/resources/circuit.png"));
 
         Label label = new Label();
         label.setStyle("-fx-font-size: 14pt;");
@@ -35,7 +35,7 @@ public class AlertBox {
         layout.setPadding(new Insets(30,30,30,30));
 
         Scene scene = new Scene(layout);
-        scene.getStylesheets().add("./main/style/style.css");
+        scene.getStylesheets().add("/main/style/style.css");
         window.setScene(scene);
         window.showAndWait();
     }

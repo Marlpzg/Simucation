@@ -29,9 +29,9 @@ public class IndexController implements Initializable {
     private void nextScene(ActionEvent event) throws Exception{
 
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../layout/intro.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/main/layout/intro.fxml"));
         Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
-        scene.getStylesheets().add("./main/style/style.css");
+        scene.getStylesheets().add("/main/style/style.css");
 
         Saving.save("1");
 
@@ -42,9 +42,9 @@ public class IndexController implements Initializable {
     private void continueCourse(ActionEvent event) throws Exception{
 
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../layout/"+Saving.getProgress()+".fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/main/layout/"+Saving.getProgress()+".fxml"));
         Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
-        scene.getStylesheets().add("./main/style/style.css");
+        scene.getStylesheets().add("/main/style/style.css");
 
 
         stage.setScene(scene);

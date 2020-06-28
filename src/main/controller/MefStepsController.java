@@ -229,9 +229,9 @@ public class MefStepsController implements Initializable {
     private void prevScene(ActionEvent event) throws Exception{
 
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../layout/condIntro.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/main/layout/condIntro.fxml"));
         Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
-        scene.getStylesheets().add("./main/style/style.css");
+        scene.getStylesheets().add("/main/style/style.css");
 
         stage.setScene(scene);
     }
@@ -241,9 +241,9 @@ public class MefStepsController implements Initializable {
 
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Saving.save("10");
-        Parent root = FXMLLoader.load(getClass().getResource("../layout/defSteps.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/main/layout/defSteps.fxml"));
         Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
-        scene.getStylesheets().add("./main/style/style.css");
+        scene.getStylesheets().add("/main/style/style.css");
         stage.setScene(scene);
     }
 

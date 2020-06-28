@@ -262,12 +262,12 @@ public class ConditionsController implements Initializable {
     @FXML
     private void nextScene(ActionEvent event) throws Exception{
 
-        /*Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Saving.save("19");
-        Parent root = FXMLLoader.load(getClass().getResource("../layout/assembly.fxml"));
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Saving.save("27");
+        Parent root = FXMLLoader.load(getClass().getResource("../layout/end.fxml"));
         Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
         scene.getStylesheets().add("./main/style/style.css");
-        stage.setScene(scene);*/
+        stage.setScene(scene);
 
     }
 

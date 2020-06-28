@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="mainscreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.EndController">
+   <top>
+      <StackPane BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" />
+         </children>
+      </StackPane>
+   </top>
+   <center>
+      <StackPane BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="10.0" text="¡Felicidades!" textAlignment="CENTER">
+                     <font>
+                        <Font name="TI-Nspire Bold" size="50.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Label>
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label style="-fx-max-width: 400pt;" text="Has completado tu capacitación del MEF en 3D con SimuCation, esperamos hayas aprendido mucho y que estes listo para cualquier desafío que se te presente." textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font name="TI-Nspire Regular" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label style="-fx-max-width: 400pt;" text="Te agradecemos que hayas llegado hasta aquí, debes sentirte orgulloso en estos momentos. Si quisieras volver a repasar da clic en el botón &quot;Volver al Inicio&quot; (Tu progreso se borrará)." textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font name="TI-Nspire Regular" size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnReturn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#restart" text="Volver al Inicio" textAlignment="CENTER">
+                     <font>
+                        <Font name="TI-Nspire Regular" size="23.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>

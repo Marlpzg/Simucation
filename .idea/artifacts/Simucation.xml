@@ -6,6 +6,12 @@
         <option name="appClass" value="main.Main" />
         <option name="description" value="" />
         <option name="htmlPlaceholderId" value="" />
+        <option name="icons">
+          <JavaFxApplicationIcons>
+            <option name="linuxIcon" value="$PROJECT_DIR$/src/main/resources/circuit.png" />
+            <option name="windowsIcon" value="$PROJECT_DIR$/src/main/resources/Simucation.ico" />
+          </JavaFxApplicationIcons>
+        </option>
         <option name="nativeBundle" value="all" />
         <option name="title" value="00046317" />
         <option name="vendor" value="" />

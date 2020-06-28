@@ -1,7 +1,6 @@
 package main.controller;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -28,7 +27,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class AssemblyController implements Initializable {
+public class ConditionsController implements Initializable {
 
     private ArrayList<MefStep> steps;
     private int currStep;
@@ -72,47 +71,43 @@ public class AssemblyController implements Initializable {
 
         String checkpoint = Saving.load();
         if (checkpoint != null){
-            if(Integer.parseInt(checkpoint) > 22) {
-                checkpoint = "22";
+            if(Integer.parseInt(checkpoint) > 26) {
+                checkpoint = "26";
                 btnNext.setDisable(false);
             }
-            maxStep = Integer.parseInt(checkpoint)-19;
+            maxStep = Integer.parseInt(checkpoint)-23;
             currStep = maxStep;
         }
 
         ArrayList<MefPart> prep = new ArrayList<>();
-        ArrayList<MefPart> assemblyX = new ArrayList<>();
-        ArrayList<MefPart> assemblyM = new ArrayList<>();
-        ArrayList<MefPart> assemblyb = new ArrayList<>();
+        ArrayList<MefPart> neu = new ArrayList<>();
+        ArrayList<MefPart> dir = new ArrayList<>();
+        ArrayList<MefPart> ans = new ArrayList<>();
 
-        //19
-        prep.add(new MefPart("Para proceder con el ensamblaje hay que recordar que inicialmente se propuso una malla con n = 8 nodos, localmente es sistema es el siguiente:","assemblyPrep1"));
-        prep.add(new MefPart("Con el fin de mejorar la legibilidad se introduciran los signos dentro de las matrices, por lo que ahora debes tener en cuenta que todas las posiciones de L y K están siendo multiplicadas por (-1):","assemblyPrep2"));
-        prep.add(new MefPart("Otro aspecto a considerar es que en cada nodo global contiene 2 incógnitas, por lo que si n = 8 nodos el sistema global tendría las siguientes dimensiones:","assemblyPrep3"));
-        prep.add(new MefPart("Al momento de añadir el SEL local de cada elemento tendrá que asimilarse una fórmula de colocación ya que se está trabajando con dos incógnitas, las posiciones reales en la matriz vendrán dadas por las siguientes fórmulas:","assemblyPrep4"));
-        prep.add(new MefPart("En estas fórmulas debes saber que i representa el nodo global al que corresponde el nodo local que estamos evaluando, lo verás de mejor manera en la siguiente sección.","assemblyPrep4"));
-        steps.add(new MefStep("Antes del Proceso de Ensamblaje", prep));
+        //23
+        prep.add(new MefPart("Ahora aplicaremos las condiciones de contorno, como recordarás al inicio de esta aventura se te solicitó que determinaras sobre qué nodos se aplicarían las condiciones.",null, "Aunque está bien si no los has memorizado, aquí te refrescaremos la memoria. Hemos preparado algunas animaciones para que puedas visaulizar claramente cómo se ejecutan las condiciones que ya has determinado gráficamente antes."));
+        prep.add(new MefPart("Recuerda también las fórmulas que utilizamos previamente en el ensamblaje, ya que se utilizarán para colocar las condiciones dependiendo a qué variable afecten.", "assemblyPrep4"));
+        steps.add(new MefStep("Condiciones de Contorno", prep));
 
-        //20
-        assemblyX.add(new MefPart("Para ensamblaje de X debes considerar que en cada nodo existe una A y una B. Tomando en cuenta las fórmulas de la sección anterior y sabiendo que existen ocho nodos en total, se tendrán ocho espacios para A y ocho espacios para B.",null, "Si A_1 se encuentra en el nodo global 1, esta se posiciona en la " +
-                "celda 1 del vector, mientras que B_1 se coloca en la celda 9 del vector. Continuando A_2 se encuentra en el nodo global 2, por lo que B_2 se coloca en la celda 10 y así sucesivamente. En la siguiente sección podrás visualizar todo el proceso."));
-        assemblyX.add(new MefPart("El ensamblaje completo es de la siguiente forma:","assemblyX"));
-        steps.add(new MefStep("Ensamblaje del Vector X", assemblyX));
+        //24
+        neu.add(new MefPart("Primero recuerda que durante el Paso 6 definimos una componente llamada Vector de Neumann que estaba presente en nuestro sistema local, ahora ese vector de Neumann lo aplicaremos en nuestro sistema global:", "neumann1"));
+        neu.add(new MefPart("Expandiremos este sistema como una matriz genérica:", "expanding"));
+        neu.add(new MefPart("Ahora recuerda cuál es el valor de la condición de Neumann y sobre qué nodos debe aplicarse. Considera también que esta condición solo tiene efecto sobre la incógnita A:", "neumann2"));
+        neu.add(new MefPart("Esto significa que colocaremos α solo en las posiciones 2, 3, 6 y 7:", "neumann"));
+        neu.add(new MefPart("De esta manera ya hemos aplicado las condiciones de Neumann a nuestro sistema. ¡Ya solo nos faltan las condiciones de Dirichlet!", null));
+        steps.add(new MefStep("Condiciones de Neumann", neu));
 
-        //21
-        assemblyM.add(new MefPart("Ahora te presentaremos una animación del proceso de ensamblaje de la Matriz M para el Elemento 1. En general el proceso es el mismo para todos los elementos, por lo que solo mostraremos ese elemento. Recuerda que para pasar de nodos locales a globales utilizaremos la fórmula:","assemblyPrep4"));
-        assemblyM.add(new MefPart("El ensamblaje del Elemento 1 es el siguiente:","assemblyM"));
-        assemblyM.add(new MefPart("Se repite el proceso con cada uno de los elementos, tomando en cuenta que si ya existe contenido en alguna celda simplemente se sumaría la nueva posición al resto del contenido de la celda; por ejemplo, si existiera un valor X que debe agregarse a M(1,1) se tendría lo siguiente","assemblyM1"));
-        assemblyM.add(new MefPart("En este elemento el proceso resultó ser bastante ordenado, pero existen casos como el elemento 2 en que no se sigue ningún orden particular:","assemblyM2"));
-        assemblyM.add(new MefPart("En estos casos el ensamblaje será bastante desordenado, pero seguirá conservando la misma lógica que el elemento 1 así que no te preocupes.",null));
-        steps.add(new MefStep("Ensamblaje de la Matriz M", assemblyM));
+        //25
+        dir.add(new MefPart("Ahora para aplicar las condiciones de dirichlet debemos fijarnos que en este caso solo afectan a la incógnita B. Estas condiciones son valores fijos en el problema por lo que dejan de ser incógnitas, y para aplicarlas deben modificar el Vector X.", null, "En la siguiente parte visualizarás como se aplican las condiciones de Dirichlet para este problema."));
+        dir.add(new MefPart("El Vector X se modifica así:", "dirichletA"));
+        dir.add(new MefPart("Ahora es necesario modificar todo el SEL, ya que hay menos incógnitas que calcular. En la siguiente parte se te presentará una animación que simula las modificaciones que deben realizarse.", null));
+        dir.add(new MefPart("Presta atención al proceso:", "dirichletB"));
+        dir.add(new MefPart("El resultado anterior ya tiene aplicadas todas las Condiciones de Contorno, por lo que estamos a un solo paso de finalizar nuestra implementación del MEF en 3D.", null, "¡Lo has hecho muy bien!"));
+        steps.add(new MefStep("Condiciones de Dirichlet", dir));
 
-        //22
-        assemblyb.add(new MefPart("Ahora para finalizar haremos el proceso de ensamblaje del Vector b para el Elemento 2. De igual forma el proceso es el mismo para todos los elementos, por lo que solo mostraremos este ejemplo. Recuerda que seguiremos haciendo uso de las fórmulas:","assemblyPrep4"));
-        assemblyb.add(new MefPart("De igual forma que en la matriz M se enumeran las posiciones del vector y luego se reemplazan por los nodos globales siguiendo las fórmulas ya establecidas para A y B. Recuerda que el superíndice indica qué elemento se está trabajando. Luego se procede a ensamblar.",null));
-        assemblyb.add(new MefPart("El ensamblaje del Elemento 2 es el siguiente:","assemblyb"));
-        assemblyb.add(new MefPart("Considera que al igual que en la matriz M, a medida se ensamblan más elementos se suman a las casillas ocupadas.",null, "¡Muy Bien! ya hemos concluido el proceso de ensamblaje, ahora solo nos falta aplciar las condiciones de contorno y podremos ejecutar nuestra simulación."));
-        steps.add(new MefStep("Ensamblaje del Vector b", assemblyb));
+        //26
+        ans.add(new MefPart("Finalmente juntando todas las partes del sistema se modifica el SEL de manera que se determine la solución del vector X:", "solution"));
+        steps.add(new MefStep("Paso Final - Resolver", ans));
 
         btnNextStep.setDisable(true);
         btnPrevStep.setDisable(true);
@@ -159,7 +154,7 @@ public class AssemblyController implements Initializable {
         if (steps.get(currStep).getParts().get(currPart).getImg() != null){
             String imgName = steps.get(currStep).getParts().get(currPart).getImg();
 
-            if (imgName.equals("assemblyX") || imgName.equals("assemblyM") || imgName.equals("assemblyb")){
+            if (imgName.equals("expanding") || imgName.equals("neumann") || imgName.equals("dirichletA") || imgName.equals("dirichletB")){
 
                 MediaPlayer player = new MediaPlayer( new Media(getClass().getResource("/main/resources/process/"+imgName+".mp4").toExternalForm()));
                 MediaView mediaView = new MediaView(player);
@@ -213,7 +208,7 @@ public class AssemblyController implements Initializable {
         if (currStep < steps.size()-1) {
             if (currStep == maxStep) {
                 maxStep++;
-                String saveVal = (19+maxStep)+"";
+                String saveVal = (23+maxStep)+"";
                 Saving.save(saveVal);
             }
             currStep++;
@@ -257,7 +252,7 @@ public class AssemblyController implements Initializable {
     private void prevScene(ActionEvent event) throws Exception{
 
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../layout/defSteps.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../layout/assembly.fxml"));
         Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
         scene.getStylesheets().add("./main/style/style.css");
 
@@ -267,12 +262,12 @@ public class AssemblyController implements Initializable {
     @FXML
     private void nextScene(ActionEvent event) throws Exception{
 
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Saving.save("23");
-        Parent root = FXMLLoader.load(getClass().getResource("../layout/conditions.fxml"));
+        /*Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Saving.save("19");
+        Parent root = FXMLLoader.load(getClass().getResource("../layout/assembly.fxml"));
         Scene scene = new Scene(root, Values.getWidth(), Values.getHeight());
         scene.getStylesheets().add("./main/style/style.css");
-        stage.setScene(scene);
+        stage.setScene(scene);*/
 
     }
 

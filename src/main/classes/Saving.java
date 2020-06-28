@@ -111,6 +111,14 @@ public class Saving {
                 return "assembly";
             case "22":
                 return "assembly";
+            case "23":
+                return "conditions";
+            case "24":
+                return "conditions";
+            case "25":
+                return "conditions";
+            case "26":
+                return "conditions";
             default:
                 return null;
         }

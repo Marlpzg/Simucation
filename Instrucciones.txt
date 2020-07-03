@@ -1,0 +1,1 @@
+Ejectuar Simucation.exe en la ruta "Simucation/bundles/Simucation".
